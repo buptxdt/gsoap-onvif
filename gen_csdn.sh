@@ -1,0 +1,1 @@
+wsdl2h -o onvif.h -c -x -t ./typemap.dat https://www.onvif.org/ver10/device/wsdl/devicemgmt.wsdl https://www.onvif.org/ver10/events/wsdl/event.wsdl https://www.onvif.org/ver20/ptz/wsdl/ptz.wsdl https://www.onvif.org/ver10/media/wsdl/media.wsdl

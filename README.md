@@ -1,3 +1,28 @@
+Notes:
+
+automake --add-missing
+autoreconf
+sudo apt-get install bison flex
+https://gitweb.gentoo.org/repo/gentoo.git/tree/net-libs/gsoap/files/gsoap-2.8.93-fix-parallel-build.patch?id=e035a4bf9fbd9853270a0a665ea80f59009b060d
+./configure --disable-ssl
+
+4.2 onvif.h文件生成
+cd bin/
+wsdl2h -c -t ../typemap.dat -o onvif.h ./wsdl/devicemgmt.wsdl ./wsdl/event.wsdl ./wsdl/media.wsdl ./wsdl/ptz.wsdl
+
+#import "wsse.h" >> onvif.h
+
+4.3 c文件生成
+soapcpp2 -c -x onvif.h -I ../ -I ../import -I ../custom
+
+cp *.nsmap onvif
+cp *.c onvif
+cp *.h onvif
+
+openssl-1.0.2r.tar.gz
+
+
+url:https://www.onvif.org/profiles/specifications/
 url:http://blog.leanote.com/post/jluyeyu/Onvif对应的不同
 
 # Onvif的wsdl文档地址
